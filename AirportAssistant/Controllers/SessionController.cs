@@ -20,30 +20,31 @@ namespace AirportAssistant.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateSessionToken()
         {
-            var apiKey = "NmFhOTNhNDMtOTZkMy00OWM5LTlkYWYtYWZmZjViYzU3NmExOjFxV1R1NVdwUXAxWEVHOUZ6ZlBxVE9oYzNWcFFKMnB0YVU2eXVIdzJ3OFk9"; // keep this secret
-            var personaConfig = new
-            {
-                name = "Airport Assistant",
-                avatarId = "6cc28442-cccd-42a8-b6e4-24b7210a09c5",
-                voiceId = "aeb61fbb-acde-40f5-898a-88350aaa513b",
-                llmId = "85906141-db1c-4927-b74d-3c82ebe2436e",
-                systemPrompt = "If a user asks about baggage location, call the baggage API tool.Extract the flight number if present and send it along with the message and sessionId.After receiving the API response, return the response message to the user."
-            };
+            // Your Anam AI API key (keep secret)
+            var apiKey = "NmFhOTNhNDMtOTZkMy00OWM5LTlkYWYtYWZmZjViYzU3NmExOjFxV1R1NVdwUXAxWEVHOUZ6ZlBxVE9oYzNWcFFKMnB0YVU2eXVIdzJ3OFk9";
+
+            // Use the persona ID that has webhook enabled
+            var personaId = "83d3ffa4-05fb-4d33-8f9d-88d6027b453f";
 
             var httpClient = _httpClientFactory.CreateClient();
             var request = new HttpRequestMessage(HttpMethod.Post, "https://api.anam.ai/v1/auth/session-token")
             {
-                Content = new StringContent(JsonSerializer.Serialize(new { personaConfig }), Encoding.UTF8, "application/json")
+                Content = new StringContent(
+                    JsonSerializer.Serialize(new {
+                        persona = new { id = personaId, type = "persona" }
+                    }),
+                    Encoding.UTF8,
+                    "application/json"
+                )
             };
+
             request.Headers.Add("Authorization", $"Bearer {apiKey}");
 
             var response = await httpClient.SendAsync(request);
             var responseContent = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
-            {
                 return StatusCode((int)response.StatusCode, responseContent);
-            }
 
             var json = JsonDocument.Parse(responseContent);
             var sessionToken = json.RootElement.GetProperty("sessionToken").GetString();
