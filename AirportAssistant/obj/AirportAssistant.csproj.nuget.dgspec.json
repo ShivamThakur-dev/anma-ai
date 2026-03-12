@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shivam.thakur\\anma-ai\\AirportAssistant\\AirportAssistant.csproj": {}
+    "C:\\Users\\shivam.thakur\\anma-ai\\airportassistant\\AirportAssistant.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shivam.thakur\\anma-ai\\AirportAssistant\\AirportAssistant.csproj": {
+    "C:\\Users\\shivam.thakur\\anma-ai\\airportassistant\\AirportAssistant.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shivam.thakur\\anma-ai\\AirportAssistant\\AirportAssistant.csproj",
+        "projectUniqueName": "C:\\Users\\shivam.thakur\\anma-ai\\airportassistant\\AirportAssistant.csproj",
         "projectName": "AirportAssistant",
-        "projectPath": "C:\\Users\\shivam.thakur\\anma-ai\\AirportAssistant\\AirportAssistant.csproj",
+        "projectPath": "C:\\Users\\shivam.thakur\\anma-ai\\airportassistant\\AirportAssistant.csproj",
         "packagesPath": "C:\\Users\\shivam.thakur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shivam.thakur\\anma-ai\\AirportAssistant\\obj\\",
+        "outputPath": "C:\\Users\\shivam.thakur\\anma-ai\\airportassistant\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\shivam.thakur\\AppData\\Roaming\\NuGet\\NuGet.Config"
