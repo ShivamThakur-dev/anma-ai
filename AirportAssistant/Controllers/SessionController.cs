@@ -27,16 +27,18 @@ namespace AirportAssistant.Controllers
             var personaId = "83d3ffa4-05fb-4d33-8f9d-88d6027b453f";
 
             var httpClient = _httpClientFactory.CreateClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.anam.ai/v1/auth/session-token")
-            {
-                Content = new StringContent(
-                    JsonSerializer.Serialize(new {
-                        persona = new { id = personaId, type = "persona" }
-                    }),
-                    Encoding.UTF8,
-                    "application/json"
-                )
-            };
+           var request = new HttpRequestMessage(HttpMethod.Post, "https://api.anam.ai/v1/auth/session-token")
+{
+    Content = new StringContent(
+        JsonSerializer.Serialize(new {
+            personaConfig = new {
+                personaId = personaId,               
+            }
+        }),
+        Encoding.UTF8,
+        "application/json"
+    )
+};
 
             request.Headers.Add("Authorization", $"Bearer {apiKey}");
 
