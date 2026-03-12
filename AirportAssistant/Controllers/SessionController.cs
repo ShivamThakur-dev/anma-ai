@@ -27,7 +27,7 @@ namespace AirportAssistant.Controllers
                 avatarId = "6cc28442-cccd-42a8-b6e4-24b7210a09c5",
                 voiceId = "aeb61fbb-acde-40f5-898a-88350aaa513b",
                 llmId = "85906141-db1c-4927-b74d-3c82ebe2436e",
-                systemPrompt = "You are an airport assistant."
+                systemPrompt = "If a user asks about baggage location, call the baggage API tool.Extract the flight number if present and send it along with the message and sessionId.After receiving the API response, return the response message to the user."
             };
 
             var httpClient = _httpClientFactory.CreateClient();
