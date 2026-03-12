@@ -2,8 +2,9 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-COPY *.csproj ./
-RUN dotnet restore
+
+COPY AirportAssistant/AirportAssistant.csproj AirportAssistant/
+RUN dotnet restore "AirportAssistant/AirportAssistant.csproj"
 
 COPY . ./
 RUN dotnet publish -c Release -o out
