@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services
 builder.Services.AddControllers();
 
+builder.Services.AddHttpClient();
+
 // Enable Swagger (for testing API)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
