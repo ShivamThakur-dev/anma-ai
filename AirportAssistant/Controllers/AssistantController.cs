@@ -11,7 +11,7 @@ namespace AirportAssistant.Controllers
         [HttpPost]
         public IActionResult AskAssistant([FromBody] UserQuery query)
         {
-            if (query.Message.ToLower().Contains("baggage"))
+            if (query.Message.ToLower().Contains("baggage")||query.Message.ToLower().Contains("luggage"))
             {
                 if (MockFlightData.BaggageBelts.ContainsKey(query.FlightNumber))
                 {
