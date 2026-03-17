@@ -32,7 +32,8 @@ namespace AirportAssistant.Controllers
     Content = new StringContent(
         JsonSerializer.Serialize(new {
             personaConfig = new {
-                personaId = personaId,               
+                personaId = personaId,   
+                languageCode = "auto"
             }
         }),
         Encoding.UTF8,
