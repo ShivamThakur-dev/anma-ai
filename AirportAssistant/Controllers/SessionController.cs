@@ -21,10 +21,10 @@ namespace AirportAssistant.Controllers
         public async Task<IActionResult> CreateSessionToken()
         {
             // Your Anam AI API key (keep secret) 
-            var apiKey = "YTU0MzA0MTQtY2M5Ni00MDJkLTkwNzktZDRlOGFjOTBkNmVlOnZqR2hkbGErRWFid1RVV3VKbk81SGhJeUROMmJiY05PUVZUUUZkVHJTaDA9";
+            var apiKey = "Y2RjYzlmMzQtZTM1MC00NmMxLTg5NTEtY2FkNjg0NDliNDIzOkg2L1VpZ0hudE5NeFZDcXJUR0hxaWlZak1SdFJhOEo3Y2U3Qm0yNUlCNFU9";
 
             // Use the persona ID that has webhook enabled
-            var personaId = "480d5041-74ef-4a84-810a-858902c1b016";
+            var personaId = "da4e96aa-16ca-4aca-a608-9d7687602e0e";
 
             var httpClient = _httpClientFactory.CreateClient();
            var request = new HttpRequestMessage(HttpMethod.Post, "https://api.anam.ai/v1/auth/session-token")
